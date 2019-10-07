@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.desafioshacker;
+
 import java.util.Scanner;
 
 /**
@@ -16,6 +11,7 @@ public class Desafio3 {
         int countPG = 0;
         int countPP= 0;
         Scanner teclado = new Scanner (System.in);
+        
         System.out.println("Digite o tamanho do amarzem em m2:");
         float armazem = teclado.nextFloat ();
         System.out.println ("Digite o tamanho do Pallet grande em m2:");
@@ -26,15 +22,18 @@ public class Desafio3 {
             float troca = palletG;
             palletG = palletP;
             palletP = troca;
-        }
+       
         System.out.println ("Voce digitou o tamanho do palete pequeno maior que "
         + "do pallet grande entao invertemos os valores.\n");
+        }
+        
         if (armazem < palletP){
             System.out.println ("\nO tamanho que digitou de um armazem e menor "
             + "que de um pallet confira o valor digitado e digite novamente:");
           float error = teclado.nextFloat ();
           armazem = error;
         }
+        
         resto = armazem;
             if ( armazem >= palletG){
                 while (resto >= palletG){
