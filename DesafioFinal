@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.desafioshacker;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jansen da Silva Almeida Costa
+ */
+public class Desafio2 {   
+    public static void main (String [] args){
+        double refri = 0.5;
+        double skol = 0;
+        double cha= 0.2;
+        Scanner teclado = new Scanner (System.in);
+        System.out.println("Digite a duracao pretendida da festa: ");
+        float tempoDeFesta = teclado.nextFloat ();
+        System.out.println ("Digite a quantidade de convidados menores de 18 anos: ");
+        int menoresQtd = teclado.nextInt ();
+        System.out.println("Digite a quantidade de convidados mairoes de 18 anos: ") ;
+        int maioresQtd = teclado.nextInt();
+        System.out.println ("Digite a quantidade de convidados idosos: ");
+        int idososQtd = teclado.nextInt ();
+            
+            refri *= tempoDeFesta*menoresQtd;
+            skol= tempoDeFesta*maioresQtd;
+            cha *= tempoDeFesta*idososQtd;
+            
+        System.out.format("Voce precisara comprar %.2f l de Skol, %.2f l de Guarana Antartica, Pepsi ou Sukita e %.2f l de Lipton ou AMA ", skol, refri, cha);
+    }
+    
