@@ -3,32 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.desafioshacker;
+;
 import java.util.Scanner;
 
 /**
  *
  * @author Jansen da Silva Almeida Costa
  */
-public class Desafio2 {   
+public class DesafioFinalPlus {   
     public static void main (String [] args){
         double refri = 0.5;
         double skol = 0;
         double cha= 0.2;
         Scanner teclado = new Scanner (System.in);
         System.out.println("Digite a duracao pretendida da festa: ");
-        float tempoDeFesta = teclado.nextFloat ();
+        Int festa = teclado.nextInt ();
         System.out.println ("Digite a quantidade de convidados menores de 18 anos: ");
-        int menoresQtd = teclado.nextInt ();
+        int menores = teclado.nextInt ();
         System.out.println("Digite a quantidade de convidados mairoes de 18 anos: ") ;
-        int maioresQtd = teclado.nextInt();
+        int maiores = teclado.nextInt();
         System.out.println ("Digite a quantidade de convidados idosos: ");
-        int idososQtd = teclado.nextInt ();
+        int idosos = teclado.nextInt ();
+            if (festa>=3){
+             
             
-            refri *= tempoDeFesta*menoresQtd;
-            skol= tempoDeFesta*maioresQtd;
-            cha *= tempoDeFesta*idososQtd;
-            
+            if (festa>2){
+        skol=1.5*maiores;
+    int auxFesta =festa-2;
+    while (auxFesta >=2){
+        double y=x*0.25;
+        
+        x=x-y;
+        
+        skol+=x*maiores;
+        
+        auxFesta -=2;
+    }
+    }
+    else {
+    skol=1.5*maiores;
+    }
         System.out.format("Voce precisara comprar %.2f l de Skol, %.2f l de Guarana Antartica, Pepsi ou Sukita e %.2f l de Lipton ou AMA ", skol, refri, cha);
     }
     
