@@ -1,48 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-;
-import java.util.Scanner;
 
-/**
- *
+ /*
  * @author Jansen da Silva Almeida Costa
  */
-public class DesafioFinalPlus {   
+import java.util.Scanner;
+public class DesafioFinal {
     public static void main (String [] args){
-        double refri = 0.5;
+        double refri = 0;
         double skol = 0;
-        double cha= 0.2;
+        double cha= 0;
         Scanner teclado = new Scanner (System.in);
         System.out.println("Digite a duracao pretendida da festa: ");
-        Int festa = teclado.nextInt ();
+        int festa = teclado.nextInt ();
         System.out.println ("Digite a quantidade de convidados menores de 18 anos: ");
         int menores = teclado.nextInt ();
         System.out.println("Digite a quantidade de convidados mairoes de 18 anos: ") ;
         int maiores = teclado.nextInt();
         System.out.println ("Digite a quantidade de convidados idosos: ");
         int idosos = teclado.nextInt ();
+        cha= 0.2*idosos*2;
             if (festa>=3){
+             refri+= 0.5*menores*3;
+             refri+= .25*menores*(festa-3);
              
-            
-            if (festa>2){
-        skol=1.5*maiores;
-    int auxFesta =festa-2;
-    while (auxFesta >=2){
-        double y=x*0.25;
-        
-        x=x-y;
-        
-        skol+=x*maiores;
-        
-        auxFesta -=2;
-    }
+             skol= Litrao (festa, maiores);
+                if (festa>=2){
+                 refri+= 0.5*menores*festa;
+                 skol= Litrao (festa, maiores);
     }
     else {
     skol=1.5*maiores;
+    refri=.5*menores;
     }
         System.out.format("Voce precisara comprar %.2f l de Skol, %.2f l de Guarana Antartica, Pepsi ou Sukita e %.2f l de Lipton ou AMA ", skol, refri, cha);
     }
-    
+}
+public static double Litrao (int festa, int maiores){
+    double skol=0;
+    skol=3*maiores;
+    int auxFesta =festa-2;
+    double x=1.5;
+    while (auxFesta >=2){
+        double y=x*0.25;
+        x=x-y;
+        skol+=x*maiores;
+        auxFesta-=2;
+        
+    }
+return skol;
+}
+}
