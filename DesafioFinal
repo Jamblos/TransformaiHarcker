@@ -1,15 +1,14 @@
-
  /*
  * @author Jansen da Silva Almeida Costa
  */
 import java.util.Scanner;
 public class DesafioFinal {
     public static void main (String [] args){
-        double refri = 0;
-        double skol = 0;
-        double cha= 0;
+        double refri ;
+        double skol;
+        double cha;
         Scanner teclado = new Scanner (System.in);
-        System.out.println("Digite a duracao pretendida da festa: ");
+        System.out.println("Digite quantas horas de festa pretende dar: ");
         int festa = teclado.nextInt ();
         System.out.println ("Digite a quantidade de convidados menores de 18 anos: ");
         int menores = teclado.nextInt ();
@@ -19,23 +18,21 @@ public class DesafioFinal {
         int idosos = teclado.nextInt ();
         cha= 0.2*idosos*2;
             if (festa>=3){
-             refri+= 0.5*menores*3;
-             refri+= .25*menores*(festa-3);
-             
+             refri= Refri (festa, menores);
              skol= Litrao (festa, maiores);
-                if (festa>=2){
-                 refri+= 0.5*menores*festa;
+            }
+               else if (festa == 2){
+                 refri= 0.5*menores*festa;
                  skol= Litrao (festa, maiores);
-    }
-    else {
-    skol=1.5*maiores;
-    refri=.5*menores;
-    }
-        System.out.format("Voce precisara comprar %.2f l de Skol, %.2f l de Guarana Antartica, Pepsi ou Sukita e %.2f l de Lipton ou AMA ", skol, refri, cha);
-    }
+                }
+                    else {
+                    skol=1.5*maiores;
+                    refri=.5*menores;
+                    }
+System.out.format("Voce precisara comprar %.2f l de Skol, %.2f l de Guarana Antartica, Pepsi ou Sukita e %.2f l de Lipton ou AMA ", skol, refri, cha);
 }
 public static double Litrao (int festa, int maiores){
-    double skol=0;
+    double skol;
     skol=3*maiores;
     int auxFesta =festa-2;
     double x=1.5;
@@ -47,5 +44,12 @@ public static double Litrao (int festa, int maiores){
         
     }
 return skol;
+}
+public static double Refri (int festa, int menores){
+    double refri;
+    refri= 1.5*menores;
+    festa-=3;
+    refri+=0.25*menores*festa;
+    return refri;
 }
 }
